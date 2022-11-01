@@ -1,0 +1,34 @@
+﻿<Page x:Class="Magazin.Pages.Zapis"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Magazin.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Zapis" Style="{StaticResource base_page}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="2" Background="#e7c8dd">
+            <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource base_button}"  Click="Back_Click"/>
+        </Grid>
+
+        <Button x:Name="ADD" Content="Добавить" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Click="ADD_Click" Style="{StaticResource base_button}"/>
+        <Button x:Name="DELETE" Content="Удалить" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 65 0" Click="DELETE_Click" Style="{StaticResource base_button}"/>
+        <DataGrid x:Name="DataTour" AutoGenerateColumns="False" IsReadOnly="True" RowHeight="30" SelectionMode="Single" LoadingRow="DataTour_LoadingRow" SelectionChanged="DataTour_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding user.name}" Header="Имя"  Width="auto"/>
+                <DataGridTextColumn Binding="{Binding user.last_name}" Header="Фамилия"  Width="auto"/>
+                <DataGridTextColumn Binding="{Binding book.book_name}" Header="Название книги"  Width="auto"/>
+                <DataGridTextColumn Binding="{Binding book.author}" Header="Автор" Width="auto"/>
+                <DataGridTextColumn Binding="{Binding time_start}" Header="Дата взятия книги"  Width="auto"/>
+                <DataGridTextColumn Binding="{Binding time_end}" Header="Дата отдачи книги"  Width="auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

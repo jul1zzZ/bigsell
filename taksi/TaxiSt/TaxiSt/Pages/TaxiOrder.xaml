@@ -1,0 +1,50 @@
+﻿<Page x:Class="TaxiSt.Pages.TaxiOrder"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TaxiSt.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TaxiOrder">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Вызов такси" FontWeight="Heavy" FontSize="40" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Введите адрес отправления: " FontSize="20" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="20 0"/>
+            <TextBlock Text="Введите адрес прибытия: " FontSize="20" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="20 0"/>
+            <TextBox Width="150" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0" Height="20"/>
+            <TextBox Width="150" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0" Height="20"/>
+            <Button x:Name="TaxiBtn" Grid.Row="2" Grid.Column="1" Content="Заказать такси" Width="150" Height="40" Background="Black" Foreground="White" FontWeight="Heavy" Click="TaxiBtn_Click"/>
+            <StackPanel Margin="10 0" Grid.Row="2" >
+                <TextBlock x:Name="tbTime"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0" FontSize="20">
+                    <Run Text="Ваше такси прибудет через: "/>
+                </TextBlock>
+                <TextBlock x:Name="tbRider"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0" FontSize="20">
+                    <Run Text="Ваш водитель: "/>
+                </TextBlock>
+                <TextBlock x:Name="tbReit" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0" FontSize="20">
+                    <Run Text="Рейтинг: "/>
+                </TextBlock>
+                <TextBlock x:Name="tbCar" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0" FontSize="20">
+                    <Run Text="Автомобиль: "/>
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

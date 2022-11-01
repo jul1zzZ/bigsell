@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище libraryEModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="id_book" />
+    </Key>
+    <Property Name="id_book" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="book_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="author" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="year" Type="int" Nullable="false" />
+    <Property Name="photo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_janre" Type="int" Nullable="false" />
+    <Property Name="id_censure" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="censure">
+    <Key>
+      <PropertyRef Name="id_censure" />
+    </Key>
+    <Property Name="id_censure" Type="int" Nullable="false" />
+    <Property Name="censure_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="janre">
+    <Key>
+      <PropertyRef Name="id_janre" />
+    </Key>
+    <Property Name="id_janre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="janre_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id_user" />
+    </Key>
+    <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pass" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="zapis">
+    <Key>
+      <PropertyRef Name="id_zapis" />
+    </Key>
+    <Property Name="id_zapis" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_book" Type="int" Nullable="false" />
+    <Property Name="id_user" Type="int" Nullable="false" />
+    <Property Name="time_start" Type="date" Nullable="false" />
+    <Property Name="time_end" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_book_censure">
+    <End Role="censure" Type="Self.censure" Multiplicity="1" />
+    <End Role="book" Type="Self.book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="censure">
+        <PropertyRef Name="id_censure" />
+      </Principal>
+      <Dependent Role="book">
+        <PropertyRef Name="id_censure" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_book_janre">
+    <End Role="janre" Type="Self.janre" Multiplicity="1" />
+    <End Role="book" Type="Self.book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="janre">
+        <PropertyRef Name="id_janre" />
+      </Principal>
+      <Dependent Role="book">
+        <PropertyRef Name="id_janre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_zapis_book">
+    <End Role="book" Type="Self.book" Multiplicity="1" />
+    <End Role="zapis" Type="Self.zapis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book">
+        <PropertyRef Name="id_book" />
+      </Principal>
+      <Dependent Role="zapis">
+        <PropertyRef Name="id_book" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_zapis_user">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="zapis" Type="Self.zapis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="zapis">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище libraryEModelContainer">
+    <EntitySet Name="book" EntityType="Self.book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="censure" EntityType="Self.censure" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="janre" EntityType="Self.janre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="zapis" EntityType="Self.zapis" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_book_censure" Association="Self.FK_book_censure">
+      <End Role="censure" EntitySet="censure" />
+      <End Role="book" EntitySet="book" />
+    </AssociationSet>
+    <AssociationSet Name="FK_book_janre" Association="Self.FK_book_janre">
+      <End Role="janre" EntitySet="janre" />
+      <End Role="book" EntitySet="book" />
+    </AssociationSet>
+    <AssociationSet Name="FK_zapis_book" Association="Self.FK_zapis_book">
+      <End Role="book" EntitySet="book" />
+      <End Role="zapis" EntitySet="zapis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_zapis_user" Association="Self.FK_zapis_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="zapis" EntitySet="zapis" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

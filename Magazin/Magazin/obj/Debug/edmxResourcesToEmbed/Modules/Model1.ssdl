@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище MagazModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="History_pokypok">
+    <Key>
+      <PropertyRef Name="History_pokypok_ID" />
+    </Key>
+    <Property Name="History_pokypok_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tovar_ID" Type="int" Nullable="false" />
+    <Property Name="Data_pokyp" Type="date" Nullable="false" />
+    <Property Name="Kolich_kuplen_produkcii" Type="int" Nullable="false" />
+    <Property Name="Sotrudnik_ID" Type="int" Nullable="false" />
+    <Property Name="Yslyga_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kategor_tovara">
+    <Key>
+      <PropertyRef Name="Kategor_tovara_ID" />
+    </Key>
+    <Property Name="Kategor_tovara_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kategor" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kategoriya_spec">
+    <Key>
+      <PropertyRef Name="Kategoriya_spec_ID" />
+    </Key>
+    <Property Name="Kategoriya_spec_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kategor" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Klient">
+    <Key>
+      <PropertyRef Name="Klient_ID" />
+    </Key>
+    <Property Name="Klient_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Famil" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Imya" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Otchestvo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Data_rogenie" Type="date" Nullable="false" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pol" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="Data_registr" Type="date" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Skan">
+    <Key>
+      <PropertyRef Name="Skan_ID" />
+    </Key>
+    <Property Name="Skan_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Klient_ID" Type="int" Nullable="false" />
+    <Property Name="Nomer_pasporta" Type="int" Nullable="false" />
+    <Property Name="Seriya_pasporta" Type="int" Nullable="false" />
+    <Property Name="Photo_pasporta" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sklad">
+    <Key>
+      <PropertyRef Name="Sklad_ID" />
+    </Key>
+    <Property Name="Sklad_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tovar_ID" Type="int" Nullable="false" />
+    <Property Name="Shtrih_kod_tovara" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sotrudnik">
+    <Key>
+      <PropertyRef Name="Sotrudnik_ID" />
+    </Key>
+    <Property Name="Sotrudnik_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surename" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Otchestvo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Seriya_pasporta" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nomer_pasporta" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Kod_podrazdel" Type="int" Nullable="false" />
+    <Property Name="Pol" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="Koficent_oplat" Type="float" Nullable="false" />
+    <Property Name="Data_rogenie" Type="date" Nullable="false" />
+    <Property Name="Kategoriya_spec_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tovar">
+    <Key>
+      <PropertyRef Name="Tovar_ID" />
+    </Key>
+    <Property Name="Tovar_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naimenovanie" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Kategor_tovara_ID" Type="int" Nullable="false" />
+    <Property Name="Stoimost" Type="float" Nullable="false" />
+    <Property Name="Harakter" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Opis_tovara" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ves" Type="float" Nullable="false" />
+    <Property Name="Shirina" Type="float" Nullable="false" />
+    <Property Name="Visota" Type="float" Nullable="false" />
+    <Property Name="Dlina" Type="float" Nullable="false" />
+    <Property Name="Proizvoditel" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dop_photo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Imeet_na_sklade" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tovar_sezon">
+    <Key>
+      <PropertyRef Name="Tovar_sezon_ID" />
+    </Key>
+    <Property Name="Tovar_sezon_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tovar_ID" Type="int" Nullable="false" />
+    <Property Name="Dostypen" Type="bit" Nullable="false" />
+    <Property Name="Sezon_Dostyp_Nedostyp" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Yslyga">
+    <Key>
+      <PropertyRef Name="Yslyga_ID" />
+    </Key>
+    <Property Name="Yslyga_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naimenovanie" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Podrob_opis" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stoimost" Type="float" Nullable="false" />
+    <Property Name="Skidka" Type="float" />
+    <Property Name="Prodolgit" Type="float" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dop_photo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Zapis_klienta">
+    <Key>
+      <PropertyRef Name="Zapis_klienta_ID" />
+    </Key>
+    <Property Name="Zapis_klienta_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Klient_ID" Type="int" Nullable="false" />
+    <Property Name="Yslyga_ID" Type="int" Nullable="false" />
+    <Property Name="Vremya_nachala_yslygi" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Data_nachala_yslygi" Type="date" Nullable="false" />
+    <Property Name="Koment" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_History_pokypok_Sotrudnik">
+    <End Role="Sotrudnik" Type="Self.Sotrudnik" Multiplicity="1" />
+    <End Role="History_pokypok" Type="Self.History_pokypok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sotrudnik">
+        <PropertyRef Name="Sotrudnik_ID" />
+      </Principal>
+      <Dependent Role="History_pokypok">
+        <PropertyRef Name="Sotrudnik_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_History_pokypok_Tovar">
+    <End Role="Tovar" Type="Self.Tovar" Multiplicity="1" />
+    <End Role="History_pokypok" Type="Self.History_pokypok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tovar">
+        <PropertyRef Name="Tovar_ID" />
+      </Principal>
+      <Dependent Role="History_pokypok">
+        <PropertyRef Name="Tovar_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_History_pokypok_Yslyga">
+    <End Role="Yslyga" Type="Self.Yslyga" Multiplicity="1" />
+    <End Role="History_pokypok" Type="Self.History_pokypok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yslyga">
+        <PropertyRef Name="Yslyga_ID" />
+      </Principal>
+      <Dependent Role="History_pokypok">
+        <PropertyRef Name="Yslyga_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Skan_Klient">
+    <End Role="Klient" Type="Self.Klient" Multiplicity="1" />
+    <End Role="Skan" Type="Self.Skan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klient">
+        <PropertyRef Name="Klient_ID" />
+      </Principal>
+      <Dependent Role="Skan">
+        <PropertyRef Name="Klient_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sklad_Tovar">
+    <End Role="Tovar" Type="Self.Tovar" Multiplicity="1" />
+    <End Role="Sklad" Type="Self.Sklad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tovar">
+        <PropertyRef Name="Tovar_ID" />
+      </Principal>
+      <Dependent Role="Sklad">
+        <PropertyRef Name="Tovar_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sotrudnik_Kategoriya_spec">
+    <End Role="Kategoriya_spec" Type="Self.Kategoriya_spec" Multiplicity="1" />
+    <End Role="Sotrudnik" Type="Self.Sotrudnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategoriya_spec">
+        <PropertyRef Name="Kategoriya_spec_ID" />
+      </Principal>
+      <Dependent Role="Sotrudnik">
+        <PropertyRef Name="Kategoriya_spec_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tovar_Kategor_tovara">
+    <End Role="Kategor_tovara" Type="Self.Kategor_tovara" Multiplicity="1" />
+    <End Role="Tovar" Type="Self.Tovar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategor_tovara">
+        <PropertyRef Name="Kategor_tovara_ID" />
+      </Principal>
+      <Dependent Role="Tovar">
+        <PropertyRef Name="Kategor_tovara_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tovar_sezon_Tovar">
+    <End Role="Tovar" Type="Self.Tovar" Multiplicity="1" />
+    <End Role="Tovar_sezon" Type="Self.Tovar_sezon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tovar">
+        <PropertyRef Name="Tovar_ID" />
+      </Principal>
+      <Dependent Role="Tovar_sezon">
+        <PropertyRef Name="Tovar_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zapis_klienta_Klient">
+    <End Role="Klient" Type="Self.Klient" Multiplicity="1" />
+    <End Role="Zapis_klienta" Type="Self.Zapis_klienta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klient">
+        <PropertyRef Name="Klient_ID" />
+      </Principal>
+      <Dependent Role="Zapis_klienta">
+        <PropertyRef Name="Klient_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zapis_klienta_Yslyga">
+    <End Role="Yslyga" Type="Self.Yslyga" Multiplicity="1" />
+    <End Role="Zapis_klienta" Type="Self.Zapis_klienta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yslyga">
+        <PropertyRef Name="Yslyga_ID" />
+      </Principal>
+      <Dependent Role="Zapis_klienta">
+        <PropertyRef Name="Yslyga_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище MagazModelContainer">
+    <EntitySet Name="History_pokypok" EntityType="Self.History_pokypok" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kategor_tovara" EntityType="Self.Kategor_tovara" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kategoriya_spec" EntityType="Self.Kategoriya_spec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Klient" EntityType="Self.Klient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skan" EntityType="Self.Skan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sklad" EntityType="Self.Sklad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sotrudnik" EntityType="Self.Sotrudnik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tovar" EntityType="Self.Tovar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tovar_sezon" EntityType="Self.Tovar_sezon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yslyga" EntityType="Self.Yslyga" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zapis_klienta" EntityType="Self.Zapis_klienta" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_History_pokypok_Sotrudnik" Association="Self.FK_History_pokypok_Sotrudnik">
+      <End Role="Sotrudnik" EntitySet="Sotrudnik" />
+      <End Role="History_pokypok" EntitySet="History_pokypok" />
+    </AssociationSet>
+    <AssociationSet Name="FK_History_pokypok_Tovar" Association="Self.FK_History_pokypok_Tovar">
+      <End Role="Tovar" EntitySet="Tovar" />
+      <End Role="History_pokypok" EntitySet="History_pokypok" />
+    </AssociationSet>
+    <AssociationSet Name="FK_History_pokypok_Yslyga" Association="Self.FK_History_pokypok_Yslyga">
+      <End Role="Yslyga" EntitySet="Yslyga" />
+      <End Role="History_pokypok" EntitySet="History_pokypok" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Skan_Klient" Association="Self.FK_Skan_Klient">
+      <End Role="Klient" EntitySet="Klient" />
+      <End Role="Skan" EntitySet="Skan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sklad_Tovar" Association="Self.FK_Sklad_Tovar">
+      <End Role="Tovar" EntitySet="Tovar" />
+      <End Role="Sklad" EntitySet="Sklad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sotrudnik_Kategoriya_spec" Association="Self.FK_Sotrudnik_Kategoriya_spec">
+      <End Role="Kategoriya_spec" EntitySet="Kategoriya_spec" />
+      <End Role="Sotrudnik" EntitySet="Sotrudnik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tovar_Kategor_tovara" Association="Self.FK_Tovar_Kategor_tovara">
+      <End Role="Kategor_tovara" EntitySet="Kategor_tovara" />
+      <End Role="Tovar" EntitySet="Tovar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tovar_sezon_Tovar" Association="Self.FK_Tovar_sezon_Tovar">
+      <End Role="Tovar" EntitySet="Tovar" />
+      <End Role="Tovar_sezon" EntitySet="Tovar_sezon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zapis_klienta_Klient" Association="Self.FK_Zapis_klienta_Klient">
+      <End Role="Klient" EntitySet="Klient" />
+      <End Role="Zapis_klienta" EntitySet="Zapis_klienta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zapis_klienta_Yslyga" Association="Self.FK_Zapis_klienta_Yslyga">
+      <End Role="Yslyga" EntitySet="Yslyga" />
+      <End Role="Zapis_klienta" EntitySet="Zapis_klienta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

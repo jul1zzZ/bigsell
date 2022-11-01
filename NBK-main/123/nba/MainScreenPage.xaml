@@ -1,0 +1,31 @@
+﻿<Window x:Class="nba.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:nba"
+        mc:Ignorable="d"
+        Title="{Binding ElementName=MainFrame, Path=Content.Title}" Height="800" Width="1000" WindowStartupLocation="CenterScreen" MinHeight="400" MinWidth="600">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="10,0">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Image Source="C:\Users\witless\Desktop\NBK-main\123\nba\Resources\logo.jpg"/>
+                    <Label Content="NBA Management System"/>
+                </StackPanel>
+                <Label Style="{StaticResource HeaderLabel}" HorizontalAlignment="Center" Content="{Binding ElementName=MainFrame, Path=Content.Title}"/>
+                <StackPanel Grid.Row="0" Margin="0,1" VerticalAlignment="Center" HorizontalAlignment="Right" Height="68" RenderTransformOrigin="0.5,0.5" Width="108">
+                    <Button x:Name="BtnBack" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Back" Click ="BtnBack_Click" Width="55" Height="28" Margin="0,30,25,30"></Button>
+                </StackPanel>
+
+            </Grid>
+            <Grid Background="CornflowerBlue" Grid.Row="2"></Grid>
+            <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
+        </Grid>
+    </Grid>
+</Window>

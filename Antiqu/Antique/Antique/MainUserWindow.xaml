@@ -1,0 +1,21 @@
+﻿<Window x:Class="Antique.MainUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Antique"
+        mc:Ignorable="d"
+        Title="Antique Shop" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid Background="#aba2a4" Grid.Row="0"/>
+        <Grid Background="#aba2a4" Grid.Row="2"/>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1"/>
+        <TextBlock Text="Antique Shop" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#574348" FontSize="40" FontWeight="UltraBlack"/>
+        <Image Grid.Row="0" Source="Resources\free-icon-telephone-6202404.png" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0" Height="80" Width="80" />
+    </Grid>
+</Window>

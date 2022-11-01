@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище stayModelContainer" CdmEntityContainer="stayEntities">
+    <EntitySetMapping Name="directions">
+      <EntityTypeMapping TypeName="stayModel.direction">
+        <MappingFragment StoreEntitySet="directions">
+          <ScalarProperty Name="id_directions" ColumnName="id_directions" />
+          <ScalarProperty Name="name_directions" ColumnName="name_directions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="entrants">
+      <EntityTypeMapping TypeName="stayModel.entrant">
+        <MappingFragment StoreEntitySet="entrant">
+          <ScalarProperty Name="id_entrant" ColumnName="id_entrant" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="certificate" ColumnName="certificate" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="modes">
+      <EntityTypeMapping TypeName="stayModel.mode">
+        <MappingFragment StoreEntitySet="mode">
+          <ScalarProperty Name="id_mode" ColumnName="id_mode" />
+          <ScalarProperty Name="name_mode" ColumnName="name_mode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="posts">
+      <EntityTypeMapping TypeName="stayModel.post">
+        <MappingFragment StoreEntitySet="post">
+          <ScalarProperty Name="id_post" ColumnName="id_post" />
+          <ScalarProperty Name="name_post" ColumnName="name_post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="specializations">
+      <EntityTypeMapping TypeName="stayModel.specialization">
+        <MappingFragment StoreEntitySet="specialization">
+          <ScalarProperty Name="id_specialization" ColumnName="id_specialization" />
+          <ScalarProperty Name="name_specialization" ColumnName="name_specialization" />
+          <ScalarProperty Name="id_directions" ColumnName="id_directions" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="budget" ColumnName="budget" />
+          <ScalarProperty Name="paid" ColumnName="paid" />
+          <ScalarProperty Name="id_staff" ColumnName="id_staff" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="id_mode" ColumnName="id_mode" />
+          <ScalarProperty Name="name_time" ColumnName="name_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffs">
+      <EntityTypeMapping TypeName="stayModel.staff">
+        <MappingFragment StoreEntitySet="staff">
+          <ScalarProperty Name="id_staff" ColumnName="id_staff" />
+          <ScalarProperty Name="id_post" ColumnName="id_post" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="times">
+      <EntityTypeMapping TypeName="stayModel.time">
+        <MappingFragment StoreEntitySet="time">
+          <ScalarProperty Name="id_time" ColumnName="id_time" />
+          <ScalarProperty Name="name_time" ColumnName="name_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="stayModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="staff_id_specialization" TypeName="stayModel.staff_id_specialization" StoreEntitySet="staff_id_specialization">
+      <EndProperty Name="specialization">
+        <ScalarProperty Name="id_specialization" ColumnName="id_specialization" />
+      </EndProperty>
+      <EndProperty Name="staff">
+        <ScalarProperty Name="id_staff" ColumnName="id_staff" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

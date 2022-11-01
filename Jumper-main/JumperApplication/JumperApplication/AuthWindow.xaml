@@ -1,0 +1,38 @@
+﻿<Window x:Class="JumperApplication.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JumperApplication"
+        mc:Ignorable="d"
+        Title="AuthWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Margin="20 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Введите email:" Style="{StaticResource CenterTb}" FontSize="24"/>
+            <TextBlock Text="Введите пароль:" Style="{StaticResource CenterTb}" FontSize="24" Grid.Row="1"/>
+            <TextBox Text="{Binding Email}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" FontSize="24"/>
+            <TextBox Text="{Binding Password}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="24"/>
+        </Grid>
+
+        <Grid Background="{StaticResource additional}"/>
+        <Grid Background="{StaticResource additional}" Grid.Row="2" />
+
+        <TextBlock Text="Попрыженок" Style="{StaticResource CenterTb}" FontSize="25"/>
+        <Button x:Name="LoginBtn" Content="Войти" Style="{StaticResource MainBtn}" Grid.Row="2" HorizontalAlignment="Center" Click="LoginBtn_Click"/>
+
+    </Grid>
+</Window>

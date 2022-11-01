@@ -1,0 +1,46 @@
+﻿<Page x:Class="Magazin.Pages.EditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Magazin.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditPage" Style="{StaticResource base_page}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="TextBlocID" Text="ID:" Height="40" />
+        <TextBlock Text="Название" Height="40" FontSize="20" Margin="5" Grid.Column="0" Grid.Row="1"/>
+        <TextBlock Text="Описание" FontSize="20" Height="40"  Margin="5" Grid.Row="2"/>
+        <TextBlock Text="Стоимость" FontSize="20" Height="40"  Margin="5" Grid.Row="3"/>
+        <TextBlock Text="Время работы (минуты)" FontSize="20" Height="40"  Margin="5" Grid.Row="6"/>
+        <TextBlock Text="Скидка" FontSize="20" Height="40"  Margin="5" Grid.Row="5"/>
+        <TextBlock Text="Изображение" FontSize="20" Grid.Row="4" Height="40" Margin="5"/>
+        <TextBox x:Name="TextBoxId" Grid.Column="1" Height="40" Width="350" Text="Заполнение автоматическое"/>
+        <TextBox x:Name="TxtNaimenovanie" Width="350"  Height="40" Margin="5" Grid.Column="1" Grid.Row="1" Text="{Binding Naimenovanie}"/>
+        <TextBox x:Name="TxtOpis" Width="350" Height="40" Margin="5" Grid.Column="1" Grid.Row="2" Text="{Binding Podrob_opis}"/>
+        <TextBox x:Name="TxtProdlit" Width="350" Height="40" Margin="5" Grid.Column="1" Grid.Row="6" Text="{Binding Prodolgit}"/>
+        <TextBox x:Name="TxtStoim" Width="350" Height="40" Margin="5" Grid.Column="1" Grid.Row="3" Text="{Binding Stoimost}"/>
+        <TextBox x:Name="TxtSkid" Width="350" Height="40" Margin="5" Grid.Column="1" Grid.Row="5" Text="{Binding Skidka}"/>
+        <Image x:Name="ImagePhoto" Source="{Binding Path=GetPhoto}" Grid.Row="4" Grid.Column="0" Width="60" Height="60" Margin="20,0"/>
+        <TextBox x:Name="Txtdopfoto" Width="0" Height="0" Margin="5" Grid.Column="1" Grid.Row="7" Text="{Binding Dop_photo}"/>
+        <Button x:Name="LoagImage" Grid.Column="1" Grid.Row="4" Content="Загрузить" Height="40" Width="100" Style="{StaticResource base_button}" Click="LoagImage_Click"/>
+        <Button x:Name="BtnSave" Grid.Row="7" Width="200" Height="40" Content="Сохранить" Style="{StaticResource base_button}" Click="BtnSave_Click"/>
+        <Button x:Name="Back" Grid.Row="7" Grid.Column="1" Width="200" Height="40" Content="Отмена" Style="{StaticResource base_button}" Click="Back_Click"/>
+        <Grid Grid.Column="5" Width="350" Height="40" Margin="5" />
+    </Grid>
+</Page>

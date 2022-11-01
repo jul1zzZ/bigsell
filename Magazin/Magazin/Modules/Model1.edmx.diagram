@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8be29565b39540e199bdd9abaa722e26" Name="Diagram1">
+        <EntityTypeShape EntityType="MagazModel.History_pokypok" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Kategor_tovara" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Kategoriya_spec" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Klient" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Skan" Width="1.5" PointX="10" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Sklad" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Sotrudnik" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Tovar" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Tovar_sezon" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.User" Width="1.5" PointX="7.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Yslyga" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MagazModel.Zapis_klienta" Width="1.5" PointX="10" PointY="7.625" IsExpanded="true" />
+        <AssociationConnector Association="MagazModel.FK_History_pokypok_Sotrudnik" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_History_pokypok_Tovar" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_History_pokypok_Yslyga" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Tovar_Kategor_tovara" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Sotrudnik_Kategoriya_spec" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Skan_Klient" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Zapis_klienta_Klient" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Sklad_Tovar" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Tovar_sezon_Tovar" ManuallyRouted="false" />
+        <AssociationConnector Association="MagazModel.FK_Zapis_klienta_Yslyga" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

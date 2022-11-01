@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="stayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="direction">
+    <Key>
+      <PropertyRef Name="id_directions" />
+    </Key>
+    <Property Name="id_directions" Type="Int32" Nullable="false" />
+    <Property Name="name_directions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="specializations" Relationship="Self.FK_specialization_directions" FromRole="directions" ToRole="specialization" />
+  </EntityType>
+  <EntityType Name="entrant">
+    <Key>
+      <PropertyRef Name="id_entrant" />
+    </Key>
+    <Property Name="id_entrant" Type="Int32" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="certificate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mode">
+    <Key>
+      <PropertyRef Name="id_mode" />
+    </Key>
+    <Property Name="id_mode" Type="Int32" Nullable="false" />
+    <Property Name="name_mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="specializations" Relationship="Self.FK_specialization_mode" FromRole="mode" ToRole="specialization" />
+  </EntityType>
+  <EntityType Name="post">
+    <Key>
+      <PropertyRef Name="id_post" />
+    </Key>
+    <Property Name="id_post" Type="Int32" Nullable="false" />
+    <Property Name="name_post" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="staffs" Relationship="Self.FK_staff_post" FromRole="post" ToRole="staff" />
+  </EntityType>
+  <EntityType Name="specialization">
+    <Key>
+      <PropertyRef Name="id_specialization" />
+    </Key>
+    <Property Name="id_specialization" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_specialization" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id_directions" Type="Int32" Nullable="false" />
+    <Property Name="price" Type="Double" Nullable="false" />
+    <Property Name="budget" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="paid" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id_staff" Type="Int32" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id_mode" Type="Int32" Nullable="false" />
+    <Property Name="name_time" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="direction" Relationship="Self.FK_specialization_directions" FromRole="specialization" ToRole="directions" />
+    <NavigationProperty Name="mode" Relationship="Self.FK_specialization_mode" FromRole="specialization" ToRole="mode" />
+    <NavigationProperty Name="staffs" Relationship="Self.staff_id_specialization" FromRole="specialization" ToRole="staff" />
+  </EntityType>
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="id_staff" />
+    </Key>
+    <Property Name="id_staff" Type="Int32" Nullable="false" />
+    <Property Name="id_post" Type="Int32" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="post" Relationship="Self.FK_staff_post" FromRole="staff" ToRole="post" />
+    <NavigationProperty Name="specialization" Relationship="Self.staff_id_specialization" FromRole="staff" ToRole="specialization" />
+  </EntityType>
+  <EntityType Name="time">
+    <Key>
+      <PropertyRef Name="id_time" />
+    </Key>
+    <Property Name="id_time" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name_time" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="login" />
+      <PropertyRef Name="password" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_specialization_directions">
+    <End Role="directions" Type="Self.direction" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="specialization" Type="Self.specialization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="directions">
+        <PropertyRef Name="id_directions" />
+      </Principal>
+      <Dependent Role="specialization">
+        <PropertyRef Name="id_directions" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_specialization_mode">
+    <End Role="mode" Type="Self.mode" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="specialization" Type="Self.specialization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mode">
+        <PropertyRef Name="id_mode" />
+      </Principal>
+      <Dependent Role="specialization">
+        <PropertyRef Name="id_mode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staff_post">
+    <End Role="post" Type="Self.post" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="staff" Type="Self.staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="post">
+        <PropertyRef Name="id_post" />
+      </Principal>
+      <Dependent Role="staff">
+        <PropertyRef Name="id_post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="staff_id_specialization">
+    <End Role="specialization" Type="Self.specialization" Multiplicity="0..1" />
+    <End Role="staff" Type="Self.staff" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="stayEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="directions" EntityType="Self.direction" />
+    <EntitySet Name="entrants" EntityType="Self.entrant" />
+    <EntitySet Name="modes" EntityType="Self.mode" />
+    <EntitySet Name="posts" EntityType="Self.post" />
+    <EntitySet Name="specializations" EntityType="Self.specialization" />
+    <EntitySet Name="staffs" EntityType="Self.staff" />
+    <EntitySet Name="times" EntityType="Self.time" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <AssociationSet Name="FK_specialization_directions" Association="Self.FK_specialization_directions">
+      <End Role="directions" EntitySet="directions" />
+      <End Role="specialization" EntitySet="specializations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_specialization_mode" Association="Self.FK_specialization_mode">
+      <End Role="mode" EntitySet="modes" />
+      <End Role="specialization" EntitySet="specializations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staff_post" Association="Self.FK_staff_post">
+      <End Role="post" EntitySet="posts" />
+      <End Role="staff" EntitySet="staffs" />
+    </AssociationSet>
+    <AssociationSet Name="staff_id_specialization" Association="Self.staff_id_specialization">
+      <End Role="specialization" EntitySet="specializations" />
+      <End Role="staff" EntitySet="staffs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

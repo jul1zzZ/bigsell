@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bookshopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="book_ID" />
+    </Key>
+    <Property Name="book_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="b_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="b_author" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="b_year" Type="Int32" Nullable="false" />
+    <Property Name="b_price" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="b_count" Type="Int32" />
+    <Property Name="b_cat_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="catalog" Relationship="Self.FK__books__b_cat_ID__300424B4" FromRole="books" ToRole="catalogs" />
+    <NavigationProperty Name="orders" Relationship="Self.FK__orders__o_book_I__30F848ED" FromRole="books" ToRole="orders" />
+  </EntityType>
+  <EntityType Name="catalog">
+    <Key>
+      <PropertyRef Name="cat_ID" />
+    </Key>
+    <Property Name="cat_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cat_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cat_count" Type="Int32" />
+    <NavigationProperty Name="books" Relationship="Self.FK__books__b_cat_ID__300424B4" FromRole="catalogs" ToRole="books" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="order_ID" />
+    </Key>
+    <Property Name="order_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="o_user_ID" Type="Int32" Nullable="false" />
+    <Property Name="o_book_ID" Type="Int32" Nullable="false" />
+    <Property Name="o_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="o_number" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="book" Relationship="Self.FK__orders__o_book_I__30F848ED" FromRole="orders" ToRole="books" />
+    <NavigationProperty Name="user" Relationship="Self.FK__orders__o_user_I__31EC6D26" FromRole="orders" ToRole="users" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="user_ID" />
+    </Key>
+    <Property Name="user_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="u_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="u_patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="u_surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="u_phone" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="u_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="u_status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="orders" Relationship="Self.FK__orders__o_user_I__31EC6D26" FromRole="users" ToRole="orders" />
+  </EntityType>
+  <EntityType Name="february">
+    <Key>
+      <PropertyRef Name="order_ID" />
+      <PropertyRef Name="o_user_ID" />
+      <PropertyRef Name="o_book_ID" />
+      <PropertyRef Name="o_time" />
+      <PropertyRef Name="o_number" />
+    </Key>
+    <Property Name="order_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="o_user_ID" Type="Int32" Nullable="false" />
+    <Property Name="o_book_ID" Type="Int32" Nullable="false" />
+    <Property Name="o_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="o_number" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__books__b_cat_ID__300424B4">
+    <End Role="catalogs" Type="Self.catalog" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="books" Type="Self.book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="catalogs">
+        <PropertyRef Name="cat_ID" />
+      </Principal>
+      <Dependent Role="books">
+        <PropertyRef Name="b_cat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__orders__o_book_I__30F848ED">
+    <End Role="books" Type="Self.book" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="orders" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="books">
+        <PropertyRef Name="book_ID" />
+      </Principal>
+      <Dependent Role="orders">
+        <PropertyRef Name="o_book_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__orders__o_user_I__31EC6D26">
+    <End Role="users" Type="Self.user" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="orders" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_ID" />
+      </Principal>
+      <Dependent Role="orders">
+        <PropertyRef Name="o_user_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="bookshopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="books" EntityType="Self.book" />
+    <EntitySet Name="catalogs" EntityType="Self.catalog" />
+    <EntitySet Name="orders" EntityType="Self.order" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="februaries" EntityType="Self.february" />
+    <AssociationSet Name="FK__books__b_cat_ID__300424B4" Association="Self.FK__books__b_cat_ID__300424B4">
+      <End Role="catalogs" EntitySet="catalogs" />
+      <End Role="books" EntitySet="books" />
+    </AssociationSet>
+    <AssociationSet Name="FK__orders__o_book_I__30F848ED" Association="Self.FK__orders__o_book_I__30F848ED">
+      <End Role="books" EntitySet="books" />
+      <End Role="orders" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__orders__o_user_I__31EC6D26" Association="Self.FK__orders__o_user_I__31EC6D26">
+      <End Role="users" EntitySet="users" />
+      <End Role="orders" EntitySet="orders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,10 @@
+C:\Users\witless\Desktop\Library\StudentDB\StudentDB\bin\x86\Debug\Database1.mdf
+C:\Users\witless\Desktop\Library\StudentDB\StudentDB\bin\x86\Debug\Database1_log.ldf
+C:\Users\witless\Desktop\Library\StudentDB\StudentDB\bin\x86\Debug\StudentDB.exe.config
+C:\Users\witless\Desktop\Library\StudentDB\StudentDB\bin\x86\Debug\StudentDB.exe
+C:\Users\witless\Desktop\Library\StudentDB\StudentDB\bin\x86\Debug\StudentDB.pdb
+C:\Users\witless\Desktop\Library\StudentDB\StudentDB\obj\x86\Debug\StudentDB.csproj.AssemblyReference.cache
+C:\Users\witless\Desktop\Library\StudentDB\StudentDB\obj\x86\Debug\StudentDB.csproj.SuggestedBindingRedirects.cache
+C:\Users\witless\Desktop\Library\StudentDB\StudentDB\obj\x86\Debug\StudentDB.csproj.CoreCompileInputs.cache
+C:\Users\witless\Desktop\Library\StudentDB\StudentDB\obj\x86\Debug\StudentDB.exe
+C:\Users\witless\Desktop\Library\StudentDB\StudentDB\obj\x86\Debug\StudentDB.pdb

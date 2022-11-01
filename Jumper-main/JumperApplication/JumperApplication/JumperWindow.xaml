@@ -1,0 +1,35 @@
+﻿<Window x:Class="JumperApplication.JumperWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JumperApplication"
+        mc:Ignorable="d"
+        Title="JumperWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="{StaticResource additional}" Grid.Row="0">
+            <Image Source="/Попрыженок.png" HorizontalAlignment="Left" Margin="10"/>
+            <TextBlock Text="Попрыженок" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="AgentCatalogBtn" Content="Каталог агентов" Style="{StaticResource MainBtn}"/>
+            <Button x:Name="AgentListBtn" Click="AgentListBtn_Click" Content="Агенты" Style="{StaticResource MainBtn}"/>
+            <Button x:Name="BackBtn" Click="BackBtn_Click" Content="Назад" Style="{StaticResource MainBtn}"/>
+        </StackPanel>
+
+        <Frame x:Name="MainFrame" Grid.Row="2" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
+        
+        <Image Name="CaptchaImage" Source="{Binding Captcha}" Width="100" Height="100" Grid.Row="2"/>
+
+        <Grid Grid.Row="3" Background="{StaticResource additional}"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,42 @@
+﻿<Page x:Class="Sanator.Pages.SanatorInfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sanator.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+      Title="SanatorInfoPage">
+
+    <Grid Background="Beige">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Наименование болезни" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Цена" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Тип лечения" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Лечащий врач" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Фото" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <TextBox Grid.Column="1" Width="250" Grid.Row="0" Text="{Binding healing_name}" materialDesign:HintAssist.Hint="Введите наименование болезни" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Grid.Column="1" Width="250" Grid.Row="1" Text="{Binding price}" materialDesign:HintAssist.Hint="Введите цену лечения" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ComboBox x:Name="HealCb" Width="250" Grid.Row="2" Grid.Column="1" SelectedItem="{Binding view}" DisplayMemberPath="view_healing" materialDesign:HintAssist.Hint="Выберите тип лечения" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ComboBox x:Name="StaffCb" Width="250" Grid.Row="3" Grid.Column="1" SelectedItem="{Binding staff}" DisplayMemberPath="lastname" materialDesign:HintAssist.Hint="Выберите лечащего врача" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="LoadPhotoBtn" Grid.Row="5" Click="LoadPhotoBtn_Click" Grid.Column="0" Content="Загрузить фото" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Image Grid.Row="4" Grid.Column="1" Source="{Binding GetPhoto}"/>
+        <Button x:Name="SaveBtn" Click="SaveBtn_Click" Content="Сохранить" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    </Grid>
+</Page>

@@ -1,0 +1,38 @@
+﻿<Page x:Class="Storehouse.Pages.ProductInfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Storehouse.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductInfoPage">
+
+    <Grid Background="#ffdadada">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Наименование продукта" Grid.Row="0" Grid.Column="0" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Выберите поставщика" Grid.Row="1" Grid.Column="0" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Выберите тип продукта" Grid.Row="2" Grid.Column="0" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Введите количество на складе" Grid.Row="3" Grid.Column="0" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="LoadPhotoBtn" Content="Загрузить фото" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="150" Click="LoadPhotoBtn_Click" Height="30"  Foreground="AliceBlue" Background="DarkCyan" FontWeight="Heavy"/>
+
+        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Name}" Width="250" VerticalAlignment="Center"/>
+        <ComboBox x:Name="ProvCb" DisplayMemberPath="Name" SelectedItem="{Binding Proviider}" Grid.Row="1" Grid.Column="1" Width="250" VerticalAlignment="Center"/>
+        <ComboBox x:Name="TypeCb" DisplayMemberPath="Name" SelectedItem="{Binding ProductType}" Grid.Row="2" Grid.Column="1" Width="250" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding AmountOnWH}" Width="250" VerticalAlignment="Center"/>
+        <Image Grid.Row="4" Grid.Column="1" Source="{Binding GetPhoto}"/>
+        <Button x:Name="SaveBtn" Click="SaveBtn_Click" Content="Сохранить" Grid.Row="10" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="150" Foreground="AliceBlue" Background="DarkCyan" FontWeight="Heavy"/>
+
+    </Grid>
+</Page>

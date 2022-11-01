@@ -1,0 +1,86 @@
+C:\Users\Дарья\Desktop\Курсовая 4\stay\bin\Debug\stay.exe.config
+C:\Users\Дарья\Desktop\Курсовая 4\stay\bin\Debug\stay.exe
+C:\Users\Дарья\Desktop\Курсовая 4\stay\bin\Debug\stay.pdb
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\MainWindow.g.cs
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\App.g.cs
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\stay_MarkupCompile.cache
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\stay_MarkupCompile.lref
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\MainWindow.baml
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\stay.g.resources
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\stay.Properties.Resources.resources
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\stay.csproj.GenerateResource.cache
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\stay.csproj.CoreCompileInputs.cache
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\stay.exe
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\stay.pdb
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\Pages\CatalogStay.g.cs
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\Pages\CatalogStay.baml
+C:\Users\Дарья\Desktop\Курсовая 4\stay\bin\Debug\EntityFramework.dll
+C:\Users\Дарья\Desktop\Курсовая 4\stay\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Дарья\Desktop\Курсовая 4\stay\bin\Debug\EntityFramework.xml
+C:\Users\Дарья\Desktop\Курсовая 4\stay\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Дарья\Desktop\Курсовая 4\stay\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\stay_Content.g.cs
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\stay.csproj.CopyComplete
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\Pages\AddStayPage1.g.cs
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\Pages\AddStayPage1.baml
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\stay.csprojAssemblyReference.cache
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\Pages\GoodAddStay.g.cs
+C:\Users\Дарья\Desktop\Курсовая 4\stay\obj\Debug\Pages\GoodAddStay.baml
+C:\Users\witless\Downloads\Telegram Desktop\staa\bin\Debug\stay.exe.config
+C:\Users\witless\Downloads\Telegram Desktop\staa\bin\Debug\stay.exe
+C:\Users\witless\Downloads\Telegram Desktop\staa\bin\Debug\stay.pdb
+C:\Users\witless\Downloads\Telegram Desktop\staa\bin\Debug\EntityFramework.dll
+C:\Users\witless\Downloads\Telegram Desktop\staa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\witless\Downloads\Telegram Desktop\staa\bin\Debug\EntityFramework.xml
+C:\Users\witless\Downloads\Telegram Desktop\staa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\witless\Downloads\Telegram Desktop\staa\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\stay.csproj.AssemblyReference.cache
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\stay.csproj.SuggestedBindingRedirects.cache
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\MainWindow.g.cs
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\Pages\AddStayPage1.g.cs
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\Pages\CatalogStay.g.cs
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\Pages\GoodAddStay.g.cs
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\App.g.cs
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\stay_Content.g.cs
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\stay_MarkupCompile.cache
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\stay_MarkupCompile.lref
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\MainWindow.baml
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\Pages\AddStayPage1.baml
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\Pages\CatalogStay.baml
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\Pages\GoodAddStay.baml
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\stay.g.resources
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\stay.Properties.Resources.resources
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\stay.csproj.GenerateResource.cache
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\stay.csproj.CoreCompileInputs.cache
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\stay.csproj.CopyComplete
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\stay.exe
+C:\Users\witless\Downloads\Telegram Desktop\staa\obj\Debug\stay.pdb
+C:\Users\witless\Desktop\staa\bin\Debug\stay.exe.config
+C:\Users\witless\Desktop\staa\bin\Debug\stay.exe
+C:\Users\witless\Desktop\staa\bin\Debug\stay.pdb
+C:\Users\witless\Desktop\staa\bin\Debug\EntityFramework.dll
+C:\Users\witless\Desktop\staa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\witless\Desktop\staa\bin\Debug\EntityFramework.xml
+C:\Users\witless\Desktop\staa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\witless\Desktop\staa\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\witless\Desktop\staa\obj\Debug\stay.csproj.AssemblyReference.cache
+C:\Users\witless\Desktop\staa\obj\Debug\stay.csproj.SuggestedBindingRedirects.cache
+C:\Users\witless\Desktop\staa\obj\Debug\MainWindow.g.cs
+C:\Users\witless\Desktop\staa\obj\Debug\Pages\AddStayPage1.g.cs
+C:\Users\witless\Desktop\staa\obj\Debug\Pages\CatalogStay.g.cs
+C:\Users\witless\Desktop\staa\obj\Debug\Pages\GoodAddStay.g.cs
+C:\Users\witless\Desktop\staa\obj\Debug\App.g.cs
+C:\Users\witless\Desktop\staa\obj\Debug\stay_Content.g.cs
+C:\Users\witless\Desktop\staa\obj\Debug\stay_MarkupCompile.cache
+C:\Users\witless\Desktop\staa\obj\Debug\stay_MarkupCompile.lref
+C:\Users\witless\Desktop\staa\obj\Debug\MainWindow.baml
+C:\Users\witless\Desktop\staa\obj\Debug\Pages\AddStayPage1.baml
+C:\Users\witless\Desktop\staa\obj\Debug\Pages\CatalogStay.baml
+C:\Users\witless\Desktop\staa\obj\Debug\Pages\GoodAddStay.baml
+C:\Users\witless\Desktop\staa\obj\Debug\stay.g.resources
+C:\Users\witless\Desktop\staa\obj\Debug\stay.Properties.Resources.resources
+C:\Users\witless\Desktop\staa\obj\Debug\stay.csproj.GenerateResource.cache
+C:\Users\witless\Desktop\staa\obj\Debug\stay.csproj.CoreCompileInputs.cache
+C:\Users\witless\Desktop\staa\obj\Debug\stay.csproj.CopyComplete
+C:\Users\witless\Desktop\staa\obj\Debug\stay.exe
+C:\Users\witless\Desktop\staa\obj\Debug\stay.pdb

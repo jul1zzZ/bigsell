@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище stayModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="directions">
+    <Key>
+      <PropertyRef Name="id_directions" />
+    </Key>
+    <Property Name="id_directions" Type="int" Nullable="false" />
+    <Property Name="name_directions" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="entrant">
+    <Key>
+      <PropertyRef Name="id_entrant" />
+    </Key>
+    <Property Name="id_entrant" Type="int" Nullable="false" />
+    <Property Name="surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="patronymic" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="certificate" Type="nvarchar" MaxLength="50" />
+    <Property Name="image" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mode">
+    <Key>
+      <PropertyRef Name="id_mode" />
+    </Key>
+    <Property Name="id_mode" Type="int" Nullable="false" />
+    <Property Name="name_mode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="post">
+    <Key>
+      <PropertyRef Name="id_post" />
+    </Key>
+    <Property Name="id_post" Type="int" Nullable="false" />
+    <Property Name="name_post" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="specialization">
+    <Key>
+      <PropertyRef Name="id_specialization" />
+    </Key>
+    <Property Name="id_specialization" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_specialization" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="id_directions" Type="int" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+    <Property Name="budget" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="paid" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="id_staff" Type="int" Nullable="false" />
+    <Property Name="image" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_mode" Type="int" Nullable="false" />
+    <Property Name="name_time" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="id_staff" />
+    </Key>
+    <Property Name="id_staff" Type="int" Nullable="false" />
+    <Property Name="id_post" Type="int" Nullable="false" />
+    <Property Name="surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="patronymic" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="80" />
+    <Property Name="image" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="staff_id_specialization">
+    <Key>
+      <PropertyRef Name="id_staff" />
+    </Key>
+    <Property Name="id_staff" Type="int" Nullable="false" />
+    <Property Name="id_specialization" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="time">
+    <Key>
+      <PropertyRef Name="id_time" />
+    </Key>
+    <Property Name="id_time" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="name_time" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "stay.dbo.user" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="login" />
+      <PropertyRef Name="password" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_specialization_directions">
+    <End Role="directions" Type="Self.directions" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="specialization" Type="Self.specialization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="directions">
+        <PropertyRef Name="id_directions" />
+      </Principal>
+      <Dependent Role="specialization">
+        <PropertyRef Name="id_directions" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_specialization_mode">
+    <End Role="mode" Type="Self.mode" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="specialization" Type="Self.specialization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mode">
+        <PropertyRef Name="id_mode" />
+      </Principal>
+      <Dependent Role="specialization">
+        <PropertyRef Name="id_mode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staff_id_specialization_specialization">
+    <End Role="specialization" Type="Self.specialization" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="staff_id_specialization" Type="Self.staff_id_specialization" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="specialization">
+        <PropertyRef Name="id_specialization" />
+      </Principal>
+      <Dependent Role="staff_id_specialization">
+        <PropertyRef Name="id_specialization" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staff_id_specialization_staff">
+    <End Role="staff" Type="Self.staff" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="staff_id_specialization" Type="Self.staff_id_specialization" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="id_staff" />
+      </Principal>
+      <Dependent Role="staff_id_specialization">
+        <PropertyRef Name="id_staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staff_post">
+    <End Role="post" Type="Self.post" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="staff" Type="Self.staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="post">
+        <PropertyRef Name="id_post" />
+      </Principal>
+      <Dependent Role="staff">
+        <PropertyRef Name="id_post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище stayModelContainer">
+    <EntitySet Name="directions" EntityType="Self.directions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="entrant" EntityType="Self.entrant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mode" EntityType="Self.mode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="post" EntityType="Self.post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="specialization" EntityType="Self.specialization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="staff_id_specialization" EntityType="Self.staff_id_specialization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="time" EntityType="Self.time" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [user].[id] AS [id], 
+    [user].[name] AS [name], 
+    [user].[login] AS [login], 
+    [user].[password] AS [password]
+    FROM [dbo].[user] AS [user]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_specialization_directions" Association="Self.FK_specialization_directions">
+      <End Role="directions" EntitySet="directions" />
+      <End Role="specialization" EntitySet="specialization" />
+    </AssociationSet>
+    <AssociationSet Name="FK_specialization_mode" Association="Self.FK_specialization_mode">
+      <End Role="mode" EntitySet="mode" />
+      <End Role="specialization" EntitySet="specialization" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staff_id_specialization_specialization" Association="Self.FK_staff_id_specialization_specialization">
+      <End Role="specialization" EntitySet="specialization" />
+      <End Role="staff_id_specialization" EntitySet="staff_id_specialization" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staff_id_specialization_staff" Association="Self.FK_staff_id_specialization_staff">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="staff_id_specialization" EntitySet="staff_id_specialization" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staff_post" Association="Self.FK_staff_post">
+      <End Role="post" EntitySet="post" />
+      <End Role="staff" EntitySet="staff" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

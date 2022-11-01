@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище MagazModelContainer" CdmEntityContainer="MagazEntities">
+    <EntitySetMapping Name="History_pokypok">
+      <EntityTypeMapping TypeName="MagazModel.History_pokypok">
+        <MappingFragment StoreEntitySet="History_pokypok">
+          <ScalarProperty Name="History_pokypok_ID" ColumnName="History_pokypok_ID" />
+          <ScalarProperty Name="Tovar_ID" ColumnName="Tovar_ID" />
+          <ScalarProperty Name="Data_pokyp" ColumnName="Data_pokyp" />
+          <ScalarProperty Name="Kolich_kuplen_produkcii" ColumnName="Kolich_kuplen_produkcii" />
+          <ScalarProperty Name="Sotrudnik_ID" ColumnName="Sotrudnik_ID" />
+          <ScalarProperty Name="Yslyga_ID" ColumnName="Yslyga_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategor_tovara">
+      <EntityTypeMapping TypeName="MagazModel.Kategor_tovara">
+        <MappingFragment StoreEntitySet="Kategor_tovara">
+          <ScalarProperty Name="Kategor_tovara_ID" ColumnName="Kategor_tovara_ID" />
+          <ScalarProperty Name="Kategor" ColumnName="Kategor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategoriya_spec">
+      <EntityTypeMapping TypeName="MagazModel.Kategoriya_spec">
+        <MappingFragment StoreEntitySet="Kategoriya_spec">
+          <ScalarProperty Name="Kategoriya_spec_ID" ColumnName="Kategoriya_spec_ID" />
+          <ScalarProperty Name="Kategor" ColumnName="Kategor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Klient">
+      <EntityTypeMapping TypeName="MagazModel.Klient">
+        <MappingFragment StoreEntitySet="Klient">
+          <ScalarProperty Name="Klient_ID" ColumnName="Klient_ID" />
+          <ScalarProperty Name="Famil" ColumnName="Famil" />
+          <ScalarProperty Name="Imya" ColumnName="Imya" />
+          <ScalarProperty Name="Otchestvo" ColumnName="Otchestvo" />
+          <ScalarProperty Name="Data_rogenie" ColumnName="Data_rogenie" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Pol" ColumnName="Pol" />
+          <ScalarProperty Name="Data_registr" ColumnName="Data_registr" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skan">
+      <EntityTypeMapping TypeName="MagazModel.Skan">
+        <MappingFragment StoreEntitySet="Skan">
+          <ScalarProperty Name="Skan_ID" ColumnName="Skan_ID" />
+          <ScalarProperty Name="Klient_ID" ColumnName="Klient_ID" />
+          <ScalarProperty Name="Nomer_pasporta" ColumnName="Nomer_pasporta" />
+          <ScalarProperty Name="Seriya_pasporta" ColumnName="Seriya_pasporta" />
+          <ScalarProperty Name="Photo_pasporta" ColumnName="Photo_pasporta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sklad">
+      <EntityTypeMapping TypeName="MagazModel.Sklad">
+        <MappingFragment StoreEntitySet="Sklad">
+          <ScalarProperty Name="Sklad_ID" ColumnName="Sklad_ID" />
+          <ScalarProperty Name="Tovar_ID" ColumnName="Tovar_ID" />
+          <ScalarProperty Name="Shtrih_kod_tovara" ColumnName="Shtrih_kod_tovara" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sotrudnik">
+      <EntityTypeMapping TypeName="MagazModel.Sotrudnik">
+        <MappingFragment StoreEntitySet="Sotrudnik">
+          <ScalarProperty Name="Sotrudnik_ID" ColumnName="Sotrudnik_ID" />
+          <ScalarProperty Name="Surename" ColumnName="Surename" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Otchestvo" ColumnName="Otchestvo" />
+          <ScalarProperty Name="Seriya_pasporta" ColumnName="Seriya_pasporta" />
+          <ScalarProperty Name="Nomer_pasporta" ColumnName="Nomer_pasporta" />
+          <ScalarProperty Name="Kod_podrazdel" ColumnName="Kod_podrazdel" />
+          <ScalarProperty Name="Pol" ColumnName="Pol" />
+          <ScalarProperty Name="Koficent_oplat" ColumnName="Koficent_oplat" />
+          <ScalarProperty Name="Data_rogenie" ColumnName="Data_rogenie" />
+          <ScalarProperty Name="Kategoriya_spec_ID" ColumnName="Kategoriya_spec_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MagazModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tovar">
+      <EntityTypeMapping TypeName="MagazModel.Tovar">
+        <MappingFragment StoreEntitySet="Tovar">
+          <ScalarProperty Name="Tovar_ID" ColumnName="Tovar_ID" />
+          <ScalarProperty Name="Naimenovanie" ColumnName="Naimenovanie" />
+          <ScalarProperty Name="Kategor_tovara_ID" ColumnName="Kategor_tovara_ID" />
+          <ScalarProperty Name="Stoimost" ColumnName="Stoimost" />
+          <ScalarProperty Name="Harakter" ColumnName="Harakter" />
+          <ScalarProperty Name="Opis_tovara" ColumnName="Opis_tovara" />
+          <ScalarProperty Name="Ves" ColumnName="Ves" />
+          <ScalarProperty Name="Shirina" ColumnName="Shirina" />
+          <ScalarProperty Name="Visota" ColumnName="Visota" />
+          <ScalarProperty Name="Dlina" ColumnName="Dlina" />
+          <ScalarProperty Name="Proizvoditel" ColumnName="Proizvoditel" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Dop_photo" ColumnName="Dop_photo" />
+          <ScalarProperty Name="Imeet_na_sklade" ColumnName="Imeet_na_sklade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tovar_sezon">
+      <EntityTypeMapping TypeName="MagazModel.Tovar_sezon">
+        <MappingFragment StoreEntitySet="Tovar_sezon">
+          <ScalarProperty Name="Tovar_sezon_ID" ColumnName="Tovar_sezon_ID" />
+          <ScalarProperty Name="Tovar_ID" ColumnName="Tovar_ID" />
+          <ScalarProperty Name="Dostypen" ColumnName="Dostypen" />
+          <ScalarProperty Name="Sezon_Dostyp_Nedostyp" ColumnName="Sezon_Dostyp_Nedostyp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="MagazModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yslyga">
+      <EntityTypeMapping TypeName="MagazModel.Yslyga">
+        <MappingFragment StoreEntitySet="Yslyga">
+          <ScalarProperty Name="Yslyga_ID" ColumnName="Yslyga_ID" />
+          <ScalarProperty Name="Naimenovanie" ColumnName="Naimenovanie" />
+          <ScalarProperty Name="Podrob_opis" ColumnName="Podrob_opis" />
+          <ScalarProperty Name="Stoimost" ColumnName="Stoimost" />
+          <ScalarProperty Name="Skidka" ColumnName="Skidka" />
+          <ScalarProperty Name="Prodolgit" ColumnName="Prodolgit" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Dop_photo" ColumnName="Dop_photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zapis_klienta">
+      <EntityTypeMapping TypeName="MagazModel.Zapis_klienta">
+        <MappingFragment StoreEntitySet="Zapis_klienta">
+          <ScalarProperty Name="Zapis_klienta_ID" ColumnName="Zapis_klienta_ID" />
+          <ScalarProperty Name="Klient_ID" ColumnName="Klient_ID" />
+          <ScalarProperty Name="Yslyga_ID" ColumnName="Yslyga_ID" />
+          <ScalarProperty Name="Vremya_nachala_yslygi" ColumnName="Vremya_nachala_yslygi" />
+          <ScalarProperty Name="Data_nachala_yslygi" ColumnName="Data_nachala_yslygi" />
+          <ScalarProperty Name="Koment" ColumnName="Koment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,66 @@
+﻿<Page x:Class="stay.Pages.CatalogStay"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:stay.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CatalogStay" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Введите текст для поиска" FontSize="20"></TextBlock>
+                <TextBox x:Name="TBoxSerach" Width="260" Margin="5,0" TextChanged="TBoxSerach_TextChanged" ></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Направление    "/>
+                <ComboBox Name="Cmbnapravlenie" Width="250" SelectionChanged="Cmbnapravlenie_SelectionChanged"  DisplayMemberPath="name_directions"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Сортировать по:" Margin="5,0"></TextBlock>
+                <ComboBox Name="CmbSort" Width="250" SelectionChanged ="CmbSort_SelectionChanged">
+                    <ComboBoxItem Content="Убыванию" />
+                    <ComboBoxItem Content="Возрастанию" />
+                </ComboBox>
+            </StackPanel>
+        </WrapPanel>
+        <ListView x:Name="ListoxViewStay" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Stretch" Grid.Row="1">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="300">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" ></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Image Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Source="{Binding Path=GetPhoto}" Height="120"/>
+                        <TextBlock Grid.Row="1" TextWrapping="Wrap" TextAlignment="Center" FontSize="14" Text="{Binding Path=name_specialization, StringFormat={} {0}}" HorizontalAlignment="Center" />
+                        <TextBlock Grid.Row="2" TextWrapping="Wrap" TextAlignment="Center" FontSize="14" Text="{Binding Path=price, StringFormat={}Стоимость: {0} ₽ в год}" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="3" TextWrapping="Wrap" TextAlignment="Center" FontSize="14" Text="{Binding Path=budget, StringFormat={}Бюджет: {0} 🦉 }" HorizontalAlignment="Center" Margin="0 0 60 0"/>
+                        <TextBlock Grid.Row="3" TextWrapping="Wrap" TextAlignment="Center"  FontSize="14" Text="{Binding Path=paid, StringFormat={}    Платно: {0}  }" HorizontalAlignment="Center" Margin="90 0 0 0" />
+                        <TextBlock Grid.Row="4" TextWrapping="Wrap" TextAlignment="Center" FontSize="14"  Text="{Binding Path=name_time, StringFormat={} ⏱{0} yers }" HorizontalAlignment="Center" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Row="2" Content="Далее" Click="Button_Click"  HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" Width="200" Height="40" Margin="0,5,38,5"></Button>
+
+    </Grid>
+</Page>

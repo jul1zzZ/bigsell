@@ -1,0 +1,12 @@
+C:\Users\Администратор\Videos\Magazin\Magazin\obj\Debug\MainWindow.g.cs
+C:\Users\Администратор\Videos\Magazin\Magazin\obj\Debug\Pages\ADMPage.g.cs
+C:\Users\Администратор\Videos\Magazin\Magazin\obj\Debug\Pages\ADMPage2.g.cs
+C:\Users\Администратор\Videos\Magazin\Magazin\obj\Debug\Pages\EditPage.g.cs
+C:\Users\Администратор\Videos\Magazin\Magazin\obj\Debug\Pages\EditZapiz.g.cs
+C:\Users\Администратор\Videos\Magazin\Magazin\obj\Debug\Pages\Osnova.g.cs
+C:\Users\Администратор\Videos\Magazin\Magazin\obj\Debug\Pages\RegPage.g.cs
+C:\Users\Администратор\Videos\Magazin\Magazin\obj\Debug\Pages\Zapis.g.cs
+C:\Users\Администратор\Videos\Magazin\Magazin\obj\Debug\App.g.cs
+C:\Users\Администратор\Videos\Magazin\Magazin\obj\Debug\library_Content.g.cs
+C:\Users\Администратор\Videos\Magazin\Magazin\obj\Debug\library_MarkupCompile.cache
+C:\Users\Администратор\Videos\Magazin\Magazin\obj\Debug\library_MarkupCompile.lref

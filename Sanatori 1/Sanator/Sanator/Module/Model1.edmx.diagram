@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c5974b5e986e45e488a0fc2c3014ef0a" Name="Diagram1">
+        <EntityTypeShape EntityType="sanModel.client" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanModel.feed" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanModel.healing" Width="1.5" PointX="3.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanModel.nomer" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanModel.placement" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanModel.post" Width="1.5" PointX="1.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanModel.staff" Width="1.5" PointX="1.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanModel.sysdiagram" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanModel.tour" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanModel.type_nomer" Width="1.5" PointX="1.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanModel.user" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sanModel.view" Width="1.5" PointX="1.5" PointY="20.75" IsExpanded="true" />
+        <AssociationConnector Association="sanModel.FK_placement_client" ManuallyRouted="false" />
+        <AssociationConnector Association="sanModel.FK_tour_client" ManuallyRouted="false" />
+        <AssociationConnector Association="sanModel.FK_placement_feed" ManuallyRouted="false" />
+        <AssociationConnector Association="sanModel.FK_healing_staff" ManuallyRouted="false" />
+        <AssociationConnector Association="sanModel.FK_healing_view" ManuallyRouted="false" />
+        <AssociationConnector Association="sanModel.FK_tour_healing" ManuallyRouted="false" />
+        <AssociationConnector Association="sanModel.FK_nomer_type_nomer" ManuallyRouted="false" />
+        <AssociationConnector Association="sanModel.FK_placement_nomer" ManuallyRouted="false" />
+        <AssociationConnector Association="sanModel.FK_tour_nomer" ManuallyRouted="false" />
+        <AssociationConnector Association="sanModel.FK_staff_post" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

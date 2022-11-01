@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище sanModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="id_client" />
+    </Key>
+    <Property Name="id_client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone_policy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pasport" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="birtday" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="feed">
+    <Key>
+      <PropertyRef Name="id_feed" />
+    </Key>
+    <Property Name="id_feed" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="feed" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="healing">
+    <Key>
+      <PropertyRef Name="id_healing" />
+    </Key>
+    <Property Name="id_healing" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="healing_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+    <Property Name="photo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_view" Type="int" Nullable="false" />
+    <Property Name="id_staff" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="nomer">
+    <Key>
+      <PropertyRef Name="id_nomer" />
+    </Key>
+    <Property Name="id_nomer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_type" Type="int" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="placement">
+    <Key>
+      <PropertyRef Name="id_placement" />
+    </Key>
+    <Property Name="id_placement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_client" Type="int" Nullable="false" />
+    <Property Name="id_nomer" Type="int" Nullable="false" />
+    <Property Name="id_feed" Type="int" Nullable="false" />
+    <Property Name="arrival_date" Type="date" Nullable="false" />
+    <Property Name="departure_date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="post">
+    <Key>
+      <PropertyRef Name="id_post" />
+    </Key>
+    <Property Name="id_post" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="post" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="id_staff" />
+    </Key>
+    <Property Name="id_staff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_post" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tour">
+    <Key>
+      <PropertyRef Name="id_tour" />
+    </Key>
+    <Property Name="id_tour" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_client" Type="int" Nullable="false" />
+    <Property Name="id_healing" Type="int" Nullable="false" />
+    <Property Name="id_nomer" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="type_nomer">
+    <Key>
+      <PropertyRef Name="id_type" />
+    </Key>
+    <Property Name="id_type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type_nomer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="float" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="login" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="pass" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="view">
+    <Key>
+      <PropertyRef Name="id_view" />
+    </Key>
+    <Property Name="id_view" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="view_healing" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_healing_staff">
+    <End Role="staff" Type="Self.staff" Multiplicity="1" />
+    <End Role="healing" Type="Self.healing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="id_staff" />
+      </Principal>
+      <Dependent Role="healing">
+        <PropertyRef Name="id_staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_healing_view">
+    <End Role="view" Type="Self.view" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="healing" Type="Self.healing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="view">
+        <PropertyRef Name="id_view" />
+      </Principal>
+      <Dependent Role="healing">
+        <PropertyRef Name="id_view" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nomer_type_nomer">
+    <End Role="type_nomer" Type="Self.type_nomer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="nomer" Type="Self.nomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_nomer">
+        <PropertyRef Name="id_type" />
+      </Principal>
+      <Dependent Role="nomer">
+        <PropertyRef Name="id_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_placement_client">
+    <End Role="client" Type="Self.client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="placement" Type="Self.placement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id_client" />
+      </Principal>
+      <Dependent Role="placement">
+        <PropertyRef Name="id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_placement_feed">
+    <End Role="feed" Type="Self.feed" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="placement" Type="Self.placement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="feed">
+        <PropertyRef Name="id_feed" />
+      </Principal>
+      <Dependent Role="placement">
+        <PropertyRef Name="id_feed" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_placement_nomer">
+    <End Role="nomer" Type="Self.nomer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="placement" Type="Self.placement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nomer">
+        <PropertyRef Name="id_nomer" />
+      </Principal>
+      <Dependent Role="placement">
+        <PropertyRef Name="id_nomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staff_post">
+    <End Role="post" Type="Self.post" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="staff" Type="Self.staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="post">
+        <PropertyRef Name="id_post" />
+      </Principal>
+      <Dependent Role="staff">
+        <PropertyRef Name="id_post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tour_client">
+    <End Role="client" Type="Self.client" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tour" Type="Self.tour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id_client" />
+      </Principal>
+      <Dependent Role="tour">
+        <PropertyRef Name="id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tour_healing">
+    <End Role="healing" Type="Self.healing" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tour" Type="Self.tour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="healing">
+        <PropertyRef Name="id_healing" />
+      </Principal>
+      <Dependent Role="tour">
+        <PropertyRef Name="id_healing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tour_nomer">
+    <End Role="nomer" Type="Self.nomer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tour" Type="Self.tour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nomer">
+        <PropertyRef Name="id_nomer" />
+      </Principal>
+      <Dependent Role="tour">
+        <PropertyRef Name="id_nomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище sanModelContainer">
+    <EntitySet Name="client" EntityType="Self.client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="feed" EntityType="Self.feed" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="healing" EntityType="Self.healing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="nomer" EntityType="Self.nomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="placement" EntityType="Self.placement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="post" EntityType="Self.post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tour" EntityType="Self.tour" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="type_nomer" EntityType="Self.type_nomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="view" EntityType="Self.view" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_healing_staff" Association="Self.FK_healing_staff">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="healing" EntitySet="healing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_healing_view" Association="Self.FK_healing_view">
+      <End Role="view" EntitySet="view" />
+      <End Role="healing" EntitySet="healing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nomer_type_nomer" Association="Self.FK_nomer_type_nomer">
+      <End Role="type_nomer" EntitySet="type_nomer" />
+      <End Role="nomer" EntitySet="nomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_placement_client" Association="Self.FK_placement_client">
+      <End Role="client" EntitySet="client" />
+      <End Role="placement" EntitySet="placement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_placement_feed" Association="Self.FK_placement_feed">
+      <End Role="feed" EntitySet="feed" />
+      <End Role="placement" EntitySet="placement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_placement_nomer" Association="Self.FK_placement_nomer">
+      <End Role="nomer" EntitySet="nomer" />
+      <End Role="placement" EntitySet="placement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staff_post" Association="Self.FK_staff_post">
+      <End Role="post" EntitySet="post" />
+      <End Role="staff" EntitySet="staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tour_client" Association="Self.FK_tour_client">
+      <End Role="client" EntitySet="client" />
+      <End Role="tour" EntitySet="tour" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tour_healing" Association="Self.FK_tour_healing">
+      <End Role="healing" EntitySet="healing" />
+      <End Role="tour" EntitySet="tour" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tour_nomer" Association="Self.FK_tour_nomer">
+      <End Role="nomer" EntitySet="nomer" />
+      <End Role="tour" EntitySet="tour" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

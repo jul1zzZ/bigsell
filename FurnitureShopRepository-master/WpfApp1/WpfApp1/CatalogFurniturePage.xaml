@@ -1,0 +1,39 @@
+﻿<Page x:Class="WpfApp1.CatalogFurniturePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CatalogFurniturePage" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="ListoxBoxFur" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Visible" HorizontalAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image Width="150" Height="200" Source="{Binding Path=GetPhoto}"></Image>
+                        <StackPanel Margin="5">
+                            <TextBlock Margin="2" FontSize="20" Text="{Binding Path=ProductName}" TextWrapping="Wrap" Width="Auto" HorizontalAlignment="Left"></TextBlock>
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <TextBlock Text="Стоимость: " FontSize="14"></TextBlock>
+                                <TextBlock FontSize="14" Text="{Binding Path=SellPrice, StringFormat={}{0} рублей}" Margin="5 0"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Количество: " FontSize="14"></TextBlock>
+                                <TextBlock Text="{Binding Path=SellAmount, StringFormat={}{0} штука(-и)}" Margin="5 0" FontSize="14"></TextBlock>
+                                </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="BtnNext" Content="Далее" Click="BtnNext_Click" Width="60" Height="20" Grid.Row="2" Background="White" Foreground="CornflowerBlue" FontFamily="Roboto" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="30 5"></Button>
+    </Grid>
+</Page>
